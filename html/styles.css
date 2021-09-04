@@ -1,0 +1,138 @@
+body{
+    color: #494949;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 17px;
+}
+#header{
+    text-align: center;
+    padding: 20px;
+}
+.nav{
+    border-bottom-color: #e6e6e6;
+    box-shadow: 0 4px 2px -3px rgb(0 0 0 / 9%);
+}
+.menu li{
+    display: inline;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+.menu li a{
+    padding: 0px 45px;
+    line-height: 50px;
+    font-weight: 520;
+    font-size: 18px;
+}
+
+.menu li a:hover{
+    color: #a24034;
+    
+}
+
+a {
+    text-decoration: none;
+    color: #494949;
+}
+
+.contains{
+    text-align: center;
+    clear: both;
+    
+}
+.item{
+    width: 25%;
+    float: left;
+}
+.item img{
+    width: 280px;
+    height: 180px;
+}
+
+
+.post{
+    font-weight: 600;
+    color: #a24034;
+    line-height: 50px;
+    text-transform: uppercase;
+}
+.post-title{
+    margin: 0px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+p{
+    margin-bottom: 26px;
+}
+
+.size-large{
+    width: 300px;
+    margin-right: 30px;
+   
+}
+
+#footer{
+    margin: 40px 30px 30px 30px;
+    border-top: 1px solid #ebebeb;
+}
+.copyright{
+    color: #b4b4b4;
+    padding-top: 10px;
+    font-size: 16px;
+}
+
+blockquote {
+    
+    font-size: 18px;
+    margin: 1.5em 10px;
+    padding: 0.5em 37px;
+    font-family: Lora,Georgia,serif;
+    quotes: "\201C""\201D""\2018""\2019";
+    color: #989898;
+    font-style:italic;
+    line-height: 1.8;
+
+  }
+  blockquote:before {
+    content: "\201c";
+    float: left;
+    margin-top: 18px;
+    margin-left: -45px;
+    font-family: Georgia,Merriweather,serif;
+    font-style: normal;
+    font-size: 60px;
+    line-height: .41;
+    color: #a24034;
+  }
+  blockquote p {
+    display: inline;
+  }
+
+  .separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 0px 30px;
+  }
+  
+  .separator::before,
+  .separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #ebebeb;
+  }
+  
+  .separator:not(:empty)::before {
+    margin-right: .25em;
+  }
+  
+  .separator:not(:empty)::after {
+    margin-left: .25em;
+  }
+
+  .title{
+    text-transform: uppercase;
+    font-weight: 700; 
+    font-size: 23px; 
+    padding: 0px 20px;  
+}
