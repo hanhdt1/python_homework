@@ -35,10 +35,11 @@ def print_words(filename):
 def print_top(filename):
     words_count = readfile_count_words(filename)
     words_count_sorted =  sorted(list(words_count), key = words_count.get, reverse = True)
-    l = len(words_count_sorted)
-    for i in range(20):
-        if i < l:
-            print (words_count_sorted[i], ":", words_count[words_count_sorted[i]])
+    inc = 1
+    for i in words_count_sorted:
+        print (f"{inc}. {i}: {words_count[i]}")
+        inc += 1
+        if inc > 20: break
 
 def readfile_count_words(filename):
     f =  open(filename, encoding='utf-8-sig')
