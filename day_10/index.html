@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tiêu đề trang -->
+    <title>HTML Introduction</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <h1>Review tour Hà Giang 2 ngày</h1>
+      <div> 
+        <p id="paragraph1">
+          Review tour Hà Giang là bài viết chia sẻ lại 1 số trải nghiệm trong quá trình đi tour Hà Giang do công ty Hà Giang trẻ tổ chức. Hà Giang là một vùng đất tuyệt vời để khám phá trên những cung đường thiên nhiên hùng vĩ. Mình đã có cơ hội tới Hà Giang trong các chuyến đi tự túc, tuy nhiên lần này mình quyết định chọn dịch vụ tour của Hà Giang Trẻ để có thêm trải nghiệm và chia sẻ từ những người địa phương, giúp mình hiểu sâu sắc hơn về văn hóa, phong tục của Hà Giang.
+        </p>
+        <p id="paragraph2">
+          Do cả đoàn đã thống nhất xuất phát từ sớm nên 6h xe tới đón mọi người để bắt đầu hành trình. Sau khi dùng bữa sáng, cả đoàn di chuyển về làng văn hóa dệt thổ cẩm Lũng Tám của người Tày. Tại đây mọi người được thực tế chứng kiến sự kỳ công để có được những bộ quần áo từ vải lanh, cả đoàn cũng được trải nghiệm các công đoạn nhỏ trong quá trình dệt hay trang trí.
+        </p>
+        <p id="paragraph3">
+          Sau đó cả đoàn ghé thăm nhà trưng bày và giới thiệu sản phẩm từ vải lanh. Mọi người được thử những bộ quần áo với màu sắc ấn tượng, đặc trưng cho các dân tộc ở Hà Giang, không chỉ thu hút khách du lịch Việt Nam mà các bạn nước ngoài cũng rất yêu thích các mẫu mã này.
+        </p>
+      </div>
+      <div>
+        <button onclick="changeColor()" class="button">Đổi màu text</button>
+        <button onclick="window.location.reload()" class="button button_reset">Reset</button>
+      </div>
+      <div>
+          Nhập màu nền: <input type="text" id="background_color" size="10">
+          <button onclick="changeBgColor(document.getElementById('background_color').value)" class="button">Đổi màu nền</button>
+      </div>
+
+      <div>
+          Thay đổi
+          <select id="param1">
+             <option value="0">Đoạn 1</option>
+             <option value="1">Đoạn 2</option>
+             <option value="2">Đoạn 3</option>
+          </select>
+          Thành
+          <select id="param2">
+            <option value="0">Đoạn 1</option>
+            <option value="1">Đoạn 2</option>
+            <option value="2">Đoạn 3</option>
+         </select>
+         <button class="button" onclick="copyContent(document.getElementById('param1').value, document.getElementById('param2').value)">Đổi</button>
+      </div>
+
+      <div>
+        Nhập kích thước font: <input type="text" id="font_size" size="3">
+        <button onclick="changeFontSize(document.getElementById('font_size').value)" class="button">Áp dụng</button>
+      </div>
+
+      <div>
+        Tăng kích thước font
+        <select id="font_increase">
+           <option value="0">Đoạn 1</option>
+           <option value="1">Đoạn 2</option>
+           <option value="2">Đoạn 3</option>
+        </select>
+        <button class="button" onclick="increaseFontSize(document.getElementById('font_increase').value)">Áp dụng</button>
+      
+        Giảm kích thước font
+        <select id="font_decrease">
+           <option value="0">Đoạn 1</option>
+           <option value="1">Đoạn 2</option>
+           <option value="2">Đoạn 3</option>
+        </select>
+        <button class="button" onclick="decreaseFontSize(document.getElementById('font_decrease').value)">Áp dụng</button>
+
+      </div>
+      <div>
+        
+      </div>
+      <script src="script.js"></script>
+  </body>
+</html>
