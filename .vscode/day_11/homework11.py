@@ -3,7 +3,7 @@ class BankAccount:
     def __init__(self, account_number, account_name, balance=0):
         self._account_number = account_number
         self._account_name = account_name
-        self._balance = balance
+        self.set_balance(balance)
 
     def get_account_number(self):
         return self._account_number
@@ -18,7 +18,8 @@ class BankAccount:
         if balance >= 0:
             self._balance = balance
         else:
-            print("Số dư không hợp lệ")    
+            self._balance = 0
+            print("Số dư khởi tạo không hợp lệ")    
 
     def display(self):
         print(f"Thông tin tài khoản: {self.get_account_number()}, {self.get_account_name()}, {self.get_balance()}")
@@ -36,7 +37,7 @@ class BankAccount:
             print ("Số tiền nạp không hợp lệ")    
 
 
-bank_account = BankAccount("TCB", "Dinh Thi Hanh", 1000000) 
+bank_account = BankAccount("TCB", "Dinh Thi Hanh", -80) 
 bank_account.display() 
 
 bank_account.deposit(4000000)
