@@ -14,8 +14,6 @@ class Game:
     '''
     players = [] 
     is_deal = False
-    min_player = 2
-    max_player = 12
     def __init__(self):
         pass
 
@@ -30,7 +28,7 @@ class Game:
                 if 2 <= number_player <= 12:    
                     for i in range(number_player):
                         name = input(f"Nhập tên người chơi {i+1}: ")
-                        if name == "": name = f"Player {i+1}"
+                        if name == "": name = f"Player{i+1}"
                         self.players.append(Player(name)) 
                     break;    
                 else:
@@ -70,7 +68,7 @@ class Game:
             raise ValueError("Đã đạt số người chơi tối đa, không thể thêm được nữa nhé")
 
         name = input(f"Nhập tên người chơi {num+1}: ") 
-        if name == "": name = f"Player {num+1}"
+        if name == "": name = f"Player{num+1}"
         self.players.append(Player(name))
         pass
 
@@ -88,6 +86,8 @@ class Game:
 
     def deal_card(self):
         '''Chia bài cho người chơi'''
+        if self.is_deal:
+            raise ValueError("Bài đã chia rồi, lật bài đi thôi")
         deck = Deck()
         deck.build()
         deck.shuffle_card()        
@@ -100,6 +100,8 @@ class Game:
     
     def flip_card(self):
         '''Lật bài tất cả người chơi, thông báo người chiến thắng'''
+        if not self.is_deal:
+            raise ValueError("Chưa chia bài bạn ơi, chia đã rồi mới lật được nhé")
         for player in self.players:
             print (f"Người chơi {player.name}", end=": ")
             print(player.flip_card(), end="")
