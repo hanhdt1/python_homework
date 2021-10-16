@@ -26,11 +26,7 @@ class Player:
         Tìm lá bài lớn nhất
         Trong trường hợp điểm bằng nhau, sẽ so sánh lá bài lớn nhất để tìm ra người chiến thắng
         '''
-        biggest = self.cards[0]        
-        for card in self.cards:
-            if card > biggest: biggest = card
-
-        return biggest   
+        return max(self.cards)
 
     def add_card(self, card):
         '''Thêm một lá bài vào bộ (rút từ bộ bài)'''
@@ -45,8 +41,13 @@ class Player:
 
     def flip_card(self):
         '''Lật bài, hiển thị các lá bài'''
-        print (f"Người chơi {self.name}", end=": ")
-        for card in self.cards:
-            print(card, end=" ")
-        print (f", Tổng điểm {self.point}, lá bài lớn nhất {self.biggest_card}")    
+        return ' '.join([str(c) for c in self.cards])
+        
+    def __gt__(self, other):
+        if(self.point > other.point):
+            return True
+        elif self.point == other.point and self.biggest_card > other.biggest_card:
+            return True
+        else: return False    
+                
 

@@ -17,15 +17,16 @@ class Card:
 
     def __gt__(self, other):
         '''So sánh 2 lá bài'''
-        if self.rank > other.rank:
+        
+        if self.suit > other.suit:
             return True
-        if self.rank == other.rank:
-            if self.suit > other.suit:
+        if self.suit == other.suit:
+            if self.rank > other.rank:
                 return True
             else:
                 return False
-        return False
-
+        
+    
 
 
      
