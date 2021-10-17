@@ -1,0 +1,4 @@
+[{ "account_number":"12345", "account_name":"Hạnh", "balance":100000},
+    { "account_number":"12346", "account_name":"Hằng", "balance":200000},
+    { "account_number":"12347", "account_name":"Oanh", "balance":300000}
+    ]
