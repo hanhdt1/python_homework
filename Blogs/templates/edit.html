@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Homepage</title>
+        <!-- Liên kết đến các file khác như css, hình ảnh, ... trong thư mục static -->
+        <link
+            rel="stylesheet"
+            href="{{url_for('static', filename='style.css')}}"
+        />
+    </head>
+    <body>
+        {% include 'header_menu.html' %}
+        {# 
+            Jinja template 
+            {% %} - một câu lệnh python 
+            {{ }} - một biểu thức, in ra kết quả 
+        #} 
+        <h1>Blogs Page</h1>
+        {% if not blog %}
+            <h3>404 - Bài viết không tồn tại</h3>
+        {% else %}
+
+        <section class="section">
+            <h2 class="section-header">{{ blog['title'] }}</h2>
+        
+            <form action="/post/{{blog['id']}}" method="POST">
+                <div class="form-field">
+                    <label for="title">Title</label>
+                    <br>
+                    <input type="text" name="title" value="{{ blog['title'] }}">
+                </div>
+            
+                <div class="form-field">
+                    <label for="content">Content</label>
+                    <br>
+                    <textarea name="content" id="" cols="30" rows="10">{{ blog['content'] }}</textarea>
+                </div>
+            
+                <div class="form-field">
+                    <button type="submit">Save post</button>
+                </div>
+            </form>
+        </section>
+            {% if error %}
+                <p style="color: red;">Bạn cần nhập đầy đủ thông tin title và content</p>
+            {% endif %}
+        {% endif %}
+        
+        <footer class="footer">
+            <hr>
+            <p class="copy-right">Blogs 2021 by hanhdt1</p>
+        </footer>
+           
+
+
+    </body>
+</html>

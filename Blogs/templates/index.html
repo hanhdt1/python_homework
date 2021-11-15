@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Homepage</title>
+        <!-- Liên kết đến các file khác như css, hình ảnh, ... trong thư mục static -->
+        <link
+            rel="stylesheet"
+            href="{{url_for('static', filename='style.css')}}"
+        />
+    </head>
+    <body>
+        {# 
+            Jinja template 
+            {% %} - một câu lệnh python 
+            {{ }} - một biểu thức, in ra kết quả 
+        #} 
+
+        {% include 'header_menu.html' %}
+        
+        <h1>Blogs Page</h1>
+        <section class="section">
+            <h2 class="section-header">What's in your mind?</h2>
+        
+            <form action="/" method="POST">
+                
+                <div class="form-field">
+                    <label for="title">Title</label>
+                    <br>
+                    <input type="text" name="title">
+                </div>
+            
+                <div class="form-field">
+                    <label for="content">Content</label>
+                    <br>
+                    <textarea name="content" id="" cols="30" rows="10"></textarea>
+                </div>
+            
+                <div class="form-field">
+                    <button type="submit">Add new post</button>                    
+                    
+                    
+                </div>
+                {% if error %}
+                    <p style="color: red;">Bạn cần nhập đầy đủ thông tin title và content</p>
+                {% endif %}
+            </form>
+        </section>
+        <section class="section">
+            <h2 class="section-header">All posts</h2>
+            <div class="list-posts"> 
+                {% if not blogs %}
+                    <p>Chưa có bài viết nào trong CSDL</p>
+                {% endif %}
+                
+                {% for blog in blogs %}
+                <hr>
+                <div class="post">
+                    <div class="post-header">
+                        <p class="post-at">Post at: {{blog["created_time"]}}</p>
+                    </div>
+            
+                    <div class="post-detail">
+                        <h3 class="post-title">{{ blog["title"] }}</h3>
+                        <p class="post-detail">{{blog["content"]}}</p>
+                        <a href="/post/{{blog['id']}}">Edit this post</a>
+                    </div>
+                </div>  
+                
+                {% endfor %}                       
+                 
+            </div>
+        </section>
+        <footer class="footer">
+            <hr>
+            <p class="copy-right">Blogs 2021 by hanhdt1</p>
+        </footer>
+           
+
+
+    </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>About</title>
+        <link
+            rel="stylesheet"
+            href="{{url_for('static', filename='style.css')}}"
+        />
+    </head>
+    <body>
+        {% include 'header_menu.html' %}         
+    
+        <section class="section">
+            <h2 class="section-header">Resignation Letter</h2>
+            <p>Quickly create a file of resignation letter</p>
+        
+            <form action="/resignation-letter" method="POST">
+                <div class="form-field">
+                    <label for="title">Fullname</label>
+                    <br>
+                    <input type="text" name="fullname">
+                </div>
+            
+                <div class="form-field">
+                    <label for="reason">Reason</label>
+                    <br>
+                    <textarea name="reason" id="" cols="30" rows="10"></textarea>
+                </div>
+        
+                <div class="form-field">
+                    <p>Note, this is just an example for fun. Don't be grumpy :)</p>
+                </div>
+            
+                <div class="form-field">
+                    <button type="submit">Create file</button>
+                </div>
+            </form>
+        </section>
+        {% if error %}
+            <p style="color: red;">Bạn cần nhập đầy đủ thông tin title và content</p>
+        {% endif %}
+
+        {% if file_name %}
+        <p>File created! Click on the link to download the file and send it to your boss right away :) 
+            <a href="/static/{{file_name}}" download="/static/{{file_name}}">Download
+
+            </a>
+        </p>
+        {% endif %}
+        <footer class="footer">
+            <hr>
+            <p class="copy-right">Blogs 2021</p>
+        </footer>
+    
+    </body>
+</html>
